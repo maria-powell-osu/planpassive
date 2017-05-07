@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 import { UniversalModule, isBrowser, isNode } from 'angular2-universal/node'; // for AoT we need to manually split universal packages
 
 import { AppModule, AppComponent } from './+app/app.module';
-import { SharedModule } from './+app/shared/shared.module';
-import { CacheService } from './+app/shared/cache.service';
+//import { SharedModule } from './+app/shared/shared.module';
+import { CacheService } from './+app/cache/cache.service';
 
 // Will be merged into @angular/platform-browser in a later release
 // see https://github.com/angular/angular/pull/12322
@@ -21,7 +21,6 @@ export function getResponse() {
   return Zone.current.get('res') || {};
 }
 
-// TODO(gdi2290): refactor into Universal
 export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
 
 @NgModule({
@@ -33,7 +32,7 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
     FormsModule,
     RouterModule.forRoot([], { useHash: false }),
 
-    SharedModule.forRoot(),
+    //SharedModule.forRoot(),
     AppModule,
   ],
   providers: [
@@ -45,15 +44,13 @@ export const UNIVERSAL_KEY = 'UNIVERSAL_CACHE';
 
     { provide: 'LRU', useFactory: getLRU, deps: [] },
 
-    CacheService,
+    //CacheService,
 
     Meta,
   ]
 })
 export class MainModule {
-  constructor(public cache: CacheService) {
-
-  }
+  constructor(public cache: CacheService) {}
 
   /**
    * We need to use the arrow function here to bind the context as this is a gotcha

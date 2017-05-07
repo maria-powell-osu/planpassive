@@ -1,27 +1,22 @@
-import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-
-import { ModelService } from '../shared/model/model.service';
+import { Component, OnInit } from '@angular/core';
+import { BlogService} from '../+blogs/blog-service/blog.service';
+import { IBlog } from "../+blogs/blog";
+import { CalculatorsComponent} from "../+calculators/calculators.component";
 
 @Component({
-  changeDetection: ChangeDetectionStrategy.Default,
-  encapsulation: ViewEncapsulation.Emulated,
-  selector: 'home',
-  styleUrls: [ './home.component.css' ],
-  templateUrl: './home.component.html'
+    templateUrl: './home.component.html',
+    providers: [BlogService] //dependency injection
 })
-export class HomeComponent {
-  data: any = {};
-  constructor(public model: ModelService) {
+export class HomeComponent implements OnInit{
+    blogs : IBlog[];
+    errorMessage : string;
 
-    // we need the data synchronously for the client to set the server response
-    // we create another method so we have more control for testing
-    this.universalInit();
-  }
-
-  universalInit() {
-    this.model.get('/data.json').subscribe(data => {
-      this.data = data;
-    });
-  }
-
+    constructor(private _blogService : BlogService){}
+    
+    ngOnInit(): void {
+        //Retrieve all Blogs
+        this._blogService.getBlogs()
+        .subscribe(blogs => this.blogs = blogs,
+        error => this.errorMessage = <any>error);
+    }
 }

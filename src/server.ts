@@ -13,8 +13,9 @@ import * as cookieParser from 'cookie-parser';
 import * as morgan from 'morgan';
 import * as compression from 'compression';
 
-// Angular 2
+// Angular 2 - enables faster deployments
 import { enableProdMode } from '@angular/core';
+
 // Angular 2 Universal
 import { createEngine } from 'angular2-express-engine';
 
@@ -58,29 +59,32 @@ function cacheControl(req, res, next) {
 }
 // Serve static files
 app.use('/assets', cacheControl, express.static(path.join(__dirname, 'assets'), {maxAge: 30}));
+
+//the web static files
 app.use(cacheControl, express.static(path.join(ROOT, 'dist/client'), {index: false}));
 
 //
 /////////////////////////
 // ** Example API
 // Notice API should be in aseparate process
-import { serverApi, createTodoApi } from './backend/api';
+//import { serverApi, createTodoApi } from './backend/api';
 // Our API for demos only
-app.get('/data.json', serverApi);
-app.use('/api', createTodoApi());
+//app.get('/data.json', serverApi);
+//app.use('/api', createTodoApi());
 
 process.on('uncaughtException', function (err) { 
   console.error('Catching uncaught errors to avoid process crash', err);
 });
 
 function ngApp(req, res) {
-
+  //page load error handling
   function onHandleError(parentZoneDelegate, currentZone, targetZone, error)  {
     console.warn('Error in SSR, serving for direct CSR');
     res.sendFile('index.html', {root: './src'});
     return false;
   }
 
+  //Render the index html file
   Zone.current.fork({ name: 'CSR fallback', onHandleError }).run(() => {
     res.render('index', {
       req,
@@ -104,6 +108,7 @@ routes.forEach(route => {
   app.get(`/${route}/*`, ngApp);
 });
 
+//If the route is not found all other routes are 404
 app.get('*', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
   var pojo = { status: 404, message: 'No Content' };

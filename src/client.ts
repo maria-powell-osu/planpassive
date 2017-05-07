@@ -21,14 +21,14 @@ export const platformRef = platformUniversalDynamic();
 export function main() {
   // Load fonts async
   // https://github.com/typekit/webfontloader#configuration
-  loadWebFont({
-    google: {
-      families: ['Droid Sans']
-    }
-  });
+  // loadWebFont({
+  //   google: {
+  //     families: ['Droid Sans']
+  //   }
+  // });
 
   return platformRef.bootstrapModule(MainModule);
 }
 
-// support async tag or hmr
+//to ensure that the DOM is ready before loading angular 2
 bootloader(main);

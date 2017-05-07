@@ -1,0 +1,69 @@
+
+
+<div class="container page-content">
+	<div class="row">
+		<div class="col-md-10">
+			<div class="btn-toolbar" >
+				<!-- BUTTON TABS -->
+		        <div class="btn-group" style="width:100%;" > 
+		        	<!-- To strech the tabs to whole width
+		        		  Each of the labels got a assigned a width percentage value. ones with longer names I gave more space -->
+		        	<!-- Loan-->
+		        	<label class="btn btn-default" style="width:25%;"  [ngClass]="{active:view === 'loan'}">
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="loan">
+                        Loan
+                    </label>
+		        	<!-- Cashflow -->
+		        	<label class="btn btn-default" style="width:42%;" [ngClass]="{active: view === 'cashflow'}">
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="cashflow">
+                        Cash Flow
+                    </label>
+		        	<!-- Result SUMMARY -->
+		        	<label class="btn btn-default" style="width:33%;" [ngClass]="{active: view === 'result'}" > 
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="result" >
+                        Result
+                    </label>
+		        </div>
+		    </div>
+		</div>
+	</div>
+	<br/>
+	<br/>
+	<form id="rentalCalculatorInputForm" name="rentalCalculatorInputForm" [formGroup]="calcForm">
+		<loaninformation [hidden]="view != 'loan'" [calcForm]="calcForm"></loaninformation>
+		<cashflow [hidden]="view != 'cashflow'" [calcForm]="calcForm"></cashflow>
+		<result *ngIf="view == 'result'" [calcForm]="calcForm" [resultData]="resultData"></result>
+	</form>
+	<br/>
+	<br/>
+	<div class="row">
+		<div class="col-md-10">
+			<div class="btn-toolbar" >
+				<!-- BUTTON TABS -->
+		        <div class="btn-group" style="width:100%;" > 
+		        	<!-- To strech the tabs to whole width
+		        		  Each of the labels got a assigned a width percentage value. ones with longer names I gave more space -->
+		        	<!-- Loan-->
+		        	<label class="btn btn-default" style="width:25%;"  [ngClass]="{active:view === 'loan'}">
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="loan">
+                        Loan
+                    </label>
+		        	<!-- Cashflow -->
+		        	<label class="btn btn-default" style="width:42%;" [ngClass]="{active: view === 'cashflow'}">
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="cashflow">
+                        Cash Flow
+                    </label>
+		        	<!-- Result SUMMARY -->
+		        	<label class="btn btn-default" style="width:33%;" [ngClass]="{active: view === 'result'}" > 
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="result" >
+                        Result
+                    </label>
+		        </div>
+		    </div>
+		</div>
+	</div>
+</div>
+<br/>
+<br/>
+<br/>
+
