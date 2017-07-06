@@ -2,9 +2,9 @@ import { Component, OnInit, OnDestroy  } from '@angular/core';
 import { IBlog } from "./blog.schema";
 import { Router, ActivatedRoute } from "@angular/router";
 import { BlogService } from "./blog.service";
-//import { CommentViewComponent } from "../../comments/comment-view/comment-view.component"; 
+import { CommentViewComponent } from "../shared/comments/comment-view.component"; 
 import { Subscription } from 'rxjs/Subscription';
-//import { IComment } from '../../comments/comment';
+import { IComment } from '../shared/comments/comment.schema';
 
 @Component({
     templateUrl: "./blog.view.component.html",
@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs/Subscription';
 export class BlogViewComponent implements OnInit, OnDestroy  {
     blog : IBlog;
     errorMessage : string;
-    //originalComment : IComment;
+    originalComment : IComment;
     private sub: Subscription;
     public isCollapsed:boolean;
 

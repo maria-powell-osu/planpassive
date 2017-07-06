@@ -1,0 +1,18 @@
+import { Component, Input } from '@angular/core';
+import { IComment } from './comment.schema';
+import { IBlog } from '../../+blogs/blog.schema';
+
+@Component({
+    selector: 'commentview',
+    templateUrl: "./comment-view.component.html"
+ })
+export class CommentViewComponent {
+    @Input() comment: IComment;
+    @Input() level: number;
+    @Input() blog: IBlog;
+    isCollapsed : boolean = true;
+
+    public collapsed(event:any):void {}
+ 
+    public expanded(event:any):void {}
+}

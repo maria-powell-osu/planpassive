@@ -4,13 +4,16 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ApiService } from './api.service';
 import { ModelService } from './model/model.service';
+import { CommentModule } from "./comments/comment.module"; 
+
 
 const MODULES = [
   // Do NOT include UniversalModule, HttpModule, or JsonpModule here
   CommonModule,
   RouterModule,
   FormsModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  CommentModule
 ];
 
 const PIPES = [

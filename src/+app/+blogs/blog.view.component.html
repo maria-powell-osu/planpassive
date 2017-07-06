@@ -16,25 +16,25 @@
     
     <!-- COMMENT REPLY VIEW-->
     <!--<div class="row blogListPadding" (collapsed)="collapsed($event)"
-        (expanded)="expanded($event)" [collapse]="isCollapsed">
+        (expanded)="expanded($event)" [collapse]="isCollapsed">-->
         <div class="col-md-12">
-            <commentreply [(blog)]="blog" [formid]="'blogReply'" [respondsTo]="" [(originalComment)]="originalComment" [(isCollapsed)]="isCollapsed"></commentreply>
+            <!--<commentreply [(blog)]="blog" [formid]="'blogReply'" [respondsTo]="" [(originalComment)]="originalComment" [(isCollapsed)]="isCollapsed"></commentreply>-->
         </div>
-    </div>-->
+    <!--</div>-->
 
-    <!--<div class="row blogListPadding">
+    <div class="row blogListPadding">
         <div class="col-md-8">
-            <br/><br/>-->
+            <br/><br/>
             <!--COMMENT REPLY BUTTON-->
-            <!--<button type="button" class="btn btn-info" (click)="isCollapsed = !isCollapsed">Comment</button>
-            <br/>-->
+            <button type="button" class="btn btn-info" (click)="isCollapsed = !isCollapsed">Comment</button>
+            <br/>
             <!-- SHOW ALL COMMENTS -->
-            <!--<h2 *ngIf="blog.comments && blog.comments.length != 0"><b style="color: #696969;">Comments</b></h2>
+            <h2 *ngIf="blog.comments && blog.comments.length != 0"><b style="color: #696969;">Comments</b></h2>
             <div *ngFor="let comment of blog.comments">-->
                 <!--<commentview [comment]="comment" [level]="1" [blog]="blog"></commentview>-->
-            <!--</div>
+            </div>
         </div>
-    </div>-->
+    </div>
     <br/>
     <br/>
 </div>
