@@ -1,8 +1,10 @@
 <!doctype html>
 <html>
 <head>
-   <!--StyleSheets-->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+   <!--StyleSheets--> 
+    <!--<link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />-->
+    <link href="/assets/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+  <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>-->
    <link href="/assets/style.css" rel="stylesheet" />
 
   <meta charset="UTF-8">
@@ -15,31 +17,14 @@
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
   <link rel="prerender" href="http://localhost:3000/lazy">
-  <link rel="preload" href="/assets/logo.png">
   <base href="/">
-
-  <!--for jQuery UI-->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script>
-        // !important: You want to give this variable(var googleLoaded = false;). This is used to run multiple chart in your jade.
-        //var googleLoaded = false;
-        // !important: Define which chart packages to preload.Because this package uses ChartWrappers you can use any chart type that Google supports, but if it // isn't loaded it will load it on demand. 
-        //var googleChartsPackagesToLoad = ['table', 'corechart', 'bar', 'gauge'];
-         // Load the Visualization API and the right packages 
-        //This was added here because as the user navigates between
-        //tabs we do not want to trigger the load multiple times
-        google.charts.load('current', {'packages':['table', 'corechart', 'bar', 'gauge']});
-    </script>
-
 </head>
 <body>
 
   <app>
     Loading Universal ...
   </app>
+
   <script async src="/main.bundle.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { HomeModule } from './+home/home.module';
 import { BlogModule } from './+blogs/blog.module';
@@ -15,6 +16,8 @@ import { AppComponent, XLargeDirective } from './app.component';
 
 @NgModule({
   declarations: [ AppComponent, XLargeDirective, NavbarComponent, FooterComponent ],
+    //declarations: [ AppComponent, XLargeDirective ],
+
   imports: [
     SharedModule,
     HomeModule,
