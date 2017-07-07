@@ -10,7 +10,7 @@ Left at:
 Issues: 
 - routing does not work with blog/{name} directly
 - collapse is not imported in ngx..how to import ngx?
-- bootstrap CDN is not always available seems like
+- may need to find another solution to include bootstrap, other than the assets folder
 
 
 
@@ -18,3 +18,93 @@ Start:
 npm run build
 npm run server
 eb deploy
+
+Left at:
+	- combo chart fails because of the result view being in a hidden element
+	- <result [hidden]="view != 'result'"
+	- need to figure out how to draw after element is not hidden anymore or do something differen
+Angular 2 TO DOs:
+	- commenting (google captcha import)
+	- calculator:
+		- validation
+		- animation
+	- navbar collapse button needs animation for clicking
+	- are blogs ordered?
+
+
+
+
+General TODOs
+- make mobile routes
+	- make site load faster
+		- minify files?
+		- images
+	- dynamic sitmap genertaion
+	- bing webmaster submission
+ 	- make the put and post and delete routes authenticated
+ 	- BLOG BUGdeleted the top one and it visually took out another one but actually deleted the right onw
+	- remove image blob should disapprea too
+	- make blog width bigger
+	- fix images list
+	- give jason ability ti give alt tag for title image 
+	-whys is listbucket function not working?
+	- how can I make the page load faster? (I suspect the front image is what takes long so see how we can improve that)
+	- need loader bars for the images
+	- minify files
+	- dates are not getting validated
+
+SEO:
+	- we need auto generate sitemaps xml
+		- evertime jason adds a blog we should update the sitemap.xml
+		
+Calculator:
+	- the numbers need commas for readability in the results page
+	- whole row click for adding data in calculator is annoying and should be shorter 
+	- cash on equity table when paid all cash creates really small increments for (cash on equity %), they should be large therefore creating a straight line   instead of confusing up and down
+	- pie charts on the same line
+	- dollar signs by pie charts
+	- when add a field (such as utility and enter desc but not the other) it will show missing field but not highligth in red like the others
+
+Backlog:
+	- 
+	- REST route should also authenticate user
+	- prevent API attacks
+	- add MOST POPULAR capability
+	- db check for javascript?
+	- Add replies to comments
+	- Shared service calls might need to be providers
+	- Admin table will need sorting and pagination
+	- SASS for page colors
+	- write jason tutorial on how large of pictures to used 
+	- blogs should be able to be ordered (maybe look how owr is doing that)
+	- pie charts on the same line	
+	- do I still need jquery ui?
+
+
+Commit Changes:
+	- git add -A
+	- commit -m
+	- git push origin master
+
+Sync with Master:
+	git pull origin master 
+
+
+Hours Tracking:
+	Coding: 390 hrs
+
+Deploy
+Go to project main directory:
+eb deploy
+
+Remove the following:
+.gitignore:
+	node_modules/*
+web/node_modules/*
+
+.ebignore
+node_modules/
+
+TO RUN WEB
+TO RUN REST
+ 

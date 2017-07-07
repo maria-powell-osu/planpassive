@@ -2,9 +2,11 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReCaptchaModule } from 'angular2-recaptcha';
 import { ApiService } from './api.service';
 import { ModelService } from './model/model.service';
-import { CommentModule } from "./comments/comment.module"; 
+import { CommentViewComponent } from "./comments/comment-view.component";
+import { CommentReplyComponent } from "./comments/comment-reply.component";
 
 
 const MODULES = [
@@ -13,7 +15,7 @@ const MODULES = [
   RouterModule,
   FormsModule,
   ReactiveFormsModule,
-  CommentModule
+  ReCaptchaModule
 ];
 
 const PIPES = [
@@ -22,6 +24,8 @@ const PIPES = [
 
 const COMPONENTS = [
   // put shared components here
+  CommentViewComponent,
+  CommentReplyComponent
 ];
 
 const PROVIDERS = [

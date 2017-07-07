@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy  } from '@angular/core';
 import { IBlog } from "./blog.schema";
 import { Router, ActivatedRoute } from "@angular/router";
 import { BlogService } from "./blog.service";
-import { CommentViewComponent } from "../shared/comments/comment-view.component"; 
 import { Subscription } from 'rxjs/Subscription';
 import { IComment } from '../shared/comments/comment.schema';
 
@@ -33,10 +32,6 @@ export class BlogViewComponent implements OnInit, OnDestroy  {
                 this.getBlog(name);
             });
     }
-
-    public collapsed(event:any):void {}
- 
-    public expanded(event:any):void {}
 
      ngOnDestroy() {
         this.sub.unsubscribe();
