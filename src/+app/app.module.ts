@@ -5,6 +5,7 @@ import { HomeModule } from './+home/home.module';
 import { BlogModule } from './+blogs/blog.module';
 import { AboutModule } from './+about/about.module';
 import { TodoModule } from './+todo/todo.module';
+import { CalculatorsModule } from './+calculators/calculators.module';
 
 import { SharedModule } from './shared/shared.module';
 import { NavbarComponent } from "./shared/navbar/navbar.component";
@@ -24,6 +25,7 @@ import { AppComponent, XLargeDirective } from './app.component';
     AboutModule,
     TodoModule,
     BlogModule,
+    CalculatorsModule,
     AppRoutingModule
   ]
 })

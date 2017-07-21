@@ -1,9 +1,7 @@
 import { Component, ChangeDetectionStrategy, ViewEncapsulation, OnInit } from '@angular/core';
 import { BlogService} from '../+blogs/blog.service';
 import { IBlog } from "../+blogs/blog.schema";
-// import { CalculatorsComponent} from "../calculators/calculators.component";
-
-// import { ModelService } from '../shared/model/model.service';
+import { CalculatorsComponent} from "../+calculators/calculators.component";
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,

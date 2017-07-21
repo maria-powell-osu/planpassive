@@ -5,11 +5,10 @@ http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs_expre
 Change "eb create --sample node-express-env" to "eb create planpassive"
 
 Left at:
-- implement your own collapse directive
+- I add the two calculators but the links to the speicific calculator and modules need to be added
 
 Issues: 
 - routing does not work with blog/{name} directly
-- collapse is not imported in ngx..how to import ngx?
 - may need to find another solution to include bootstrap, other than the assets folder
 
 
