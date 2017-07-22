@@ -7,6 +7,8 @@ import { ApiService } from './api.service';
 import { ModelService } from './model/model.service';
 import { CommentViewComponent } from "./comments/comment-view.component";
 import { CommentReplyComponent } from "./comments/comment-reply.component";
+import { LoaderComponent } from "./loader/loader.component";
+import { GoogleChartsComponent } from "./charts/google-charts.component";
 
 
 const MODULES = [
@@ -25,7 +27,9 @@ const PIPES = [
 const COMPONENTS = [
   // put shared components here
   CommentViewComponent,
-  CommentReplyComponent
+  CommentReplyComponent,
+  LoaderComponent,
+  GoogleChartsComponent
 ];
 
 const PROVIDERS = [

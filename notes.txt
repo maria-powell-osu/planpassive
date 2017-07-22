@@ -90,7 +90,7 @@ Sync with Master:
 
 
 Hours Tracking:
-	Coding: 390 hrs
+	Coding: 394 hrs
 
 Deploy
 Go to project main directory:
