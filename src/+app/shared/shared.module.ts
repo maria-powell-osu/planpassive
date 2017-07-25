@@ -9,6 +9,9 @@ import { CommentViewComponent } from "./comments/comment-view.component";
 import { CommentReplyComponent } from "./comments/comment-reply.component";
 import { LoaderComponent } from "./loader/loader.component";
 import { GoogleChartsComponent } from "./charts/google-charts.component";
+import { mpDatePicker } from "./datepicker/mpdatepicker";
+import { mpToolTip } from "./tooltip/mptooltip";
+import { GoogleChartsService } from "./charts/google-charts-service"; 
 
 
 const MODULES = [
@@ -22,6 +25,8 @@ const MODULES = [
 
 const PIPES = [
   // put pipes here
+  mpDatePicker,
+  mpToolTip
 ];
 
 const COMPONENTS = [
@@ -34,7 +39,8 @@ const COMPONENTS = [
 
 const PROVIDERS = [
   ModelService,
-  ApiService
+  ApiService,
+  GoogleChartsService
 ]
 
 @NgModule({

@@ -8,7 +8,7 @@
 	</div>
 </div>
 <div class="row blogRow mpClickable blogHover" *ngFor="let blog of blogs">
-    <a [routerLink]="['/blog', blog.url]">
+    <a [routerLink]="['/blogs', blog.url]">
         <!-- Implements push and pull re-ordering for columns 
             This was added so that on small screens the title comes first-->
         <div class="col-md-6 col-md-push-4">

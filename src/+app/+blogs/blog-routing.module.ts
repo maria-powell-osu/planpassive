@@ -8,7 +8,7 @@ import { BlogViewComponent } from './blog.view.component';
   imports: [
     RouterModule.forChild([
       { path: 'blogs', component: BlogListComponent },
-      { path: 'blog/:name', component: BlogViewComponent}
+      { path: 'blogs/:name', component: BlogViewComponent}
     ])
   ]
 })

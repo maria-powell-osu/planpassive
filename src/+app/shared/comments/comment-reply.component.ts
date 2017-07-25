@@ -4,6 +4,7 @@ import { FormGroup , FormBuilder, FormControl, ValidatorFn, Validators, Abstract
 import { CommentService} from './comment.service';
 import { IComment } from './comment.schema';
 import { IBlog} from '../../+blogs/blog.schema';
+import { isBrowser } from 'angular2-universal';
 
 @Component({
     selector: 'commentreply',
@@ -21,17 +22,19 @@ export class CommentReplyComponent {
     @Output() blogChange = new EventEmitter();
     @Output() originalCommentChange = new EventEmitter();
     errorMessage : any;
-
+    isBrowser : any;
     commentReplyForm : FormGroup;
     userHitReply: boolean;
-    EMAIL_REGEX = '/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/';
+    EMAIL_REGEX = "\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+";
 
     constructor(private _fb: FormBuilder, private _commentService : CommentService){
         this.userHitReply = false;
+        this.isBrowser = isBrowser;
         this.commentReplyForm = this._fb.group({  
             name :  ['', [Validators.required]],
             content : ['', [Validators.required]],
-            email : ['', [Validators.required, Validators.pattern(this.EMAIL_REGEX)]],
+            //email : ['', [Validators.required, Validators.pattern(this.EMAIL_REGEX)]],
+            email: '',
             website: '',
             date: '',
             captcha: ['', [Validators.required]],
@@ -48,11 +51,15 @@ export class CommentReplyComponent {
     submitNewComment(){
         this.userHitReply = true;
 
-        if(this.commentReplyForm.valid
-             && this.captcha.getResponse() 
-             && this.captcha.getResponse() !== ''
-             && this.blog.key){
-
+            //isBrowser check was added for server side rendering support with universal
+             if(this.commentReplyForm.valid
+                && this.blog.key 
+                && (isBrowser == false 
+                    || (isBrowser == true
+                    && this.captcha.getResponse() 
+                    && this.captcha.getResponse() !== ''))
+                ){
+                
                 //set the blog key into the comment
                 this.commentReplyForm.patchValue({"blogKey" : this.blog.key});
 

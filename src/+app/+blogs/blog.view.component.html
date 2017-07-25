@@ -29,7 +29,7 @@
             <br/>
             <!-- SHOW ALL COMMENTS -->
             <h2 *ngIf="blog.comments && blog.comments.length != 0"><b style="color: #696969;">Comments</b></h2>
-            <div *ngFor="let comment of blog.comments">-->
+            <div *ngFor="let comment of blog.comments">
                 <commentview [comment]="comment" [level]="1" [blog]="blog"></commentview>
             </div>
         </div>

@@ -36,7 +36,8 @@
                     <span *ngIf="commentReplyForm.get('email').errors" class="text-danger">* </span>
                     Email
                 </label>
-				<input type="email"  class="form-control inpt" formControlName="email" name="email">
+                <input type="email"  class="form-control inpt" formControlName="email" name="email"
+                pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" >
 
                  <!-- Field Error Message-->
                 <div *ngIf="commentReplyForm.get('email').errors && userHitReply">
@@ -47,11 +48,13 @@
                   Enter a Valid Email
                   </span>
                </div>  
-
-				<!--Recaptcha Widget-->
                 <br/>
-                <re-captcha (captchaResponse)="captchaResponse($event)" class="mobileCaptchaResize"
-                    site_key="<6Le7FCoTAAAAAJLEqXtMZeRkxnP_jg_DDqmqsuJH>"></re-captcha>
+                <!-- to enable angular universal serverside rendering since recaptcha is 
+                    not compadible with universal -->
+                <div *ngIf="isBrowser"> 
+                    <re-captcha (captchaResponse)="captchaResponse($event)" class="mobileCaptchaResize"
+                    site_key="<6Le7FCoTAAAAAJLEqXtMZeRkxnP_jg_DDqmqsuJH>"></re-captcha> 
+                </div>
 
                  <!-- Field Error Message-->
                 <div *ngIf="commentReplyForm.get('captcha').errors && userHitReply">

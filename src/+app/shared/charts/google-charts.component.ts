@@ -1,5 +1,7 @@
 import { Component, Input,Output ,OnInit, EventEmitter} from '@angular/core';
 import { FormGroup , FormBuilder, FormControl } from '@angular/forms';
+import { GoogleChartsService } from "./google-charts-service"; 
+import { isBrowser } from 'angular2-universal';
 declare var google: any;
 declare var jQuery: any;
 
@@ -16,17 +18,18 @@ export class GoogleChartsComponent implements OnInit{
     @Input() control: FormControl;
     @Input() chartId: string;
     @Output() loadingChange = new EventEmitter<boolean>();
-    private static googleLoaded: boolean;
 
     ngOnInit() {
         var self = this;
-        if(!GoogleChartsComponent.googleLoaded) {            
+        if(!this._googleChartsService.getHasGoogleChartsLoaded() && isBrowser) {            
             google.charts.load('current', {'packages':['table', 'corechart', 'bar', 'gauge']});
-            GoogleChartsComponent.googleLoaded = true;
+            this._googleChartsService.setHasGoogleChartsLoaded(true);
         }
         
-         //Added to ensure that google loads library fully before drawing charts
-        google.charts.setOnLoadCallback(processTable);
+        if(isBrowser){
+            //Added to ensure that google loads library fully before drawing charts
+            google.charts.setOnLoadCallback(processTable);
+        }
 
         //Callback function
         function processTable(){
@@ -65,7 +68,7 @@ export class GoogleChartsComponent implements OnInit{
             });
         }
     }
-    constructor(){}
+    constructor(private _googleChartsService: GoogleChartsService){}
 
     private drawColumnChart(rawData: any){
         var chartElement = jQuery("#" + this.chartId)[0];

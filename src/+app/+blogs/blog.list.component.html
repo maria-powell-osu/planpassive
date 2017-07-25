@@ -9,7 +9,7 @@
         <!-- BLOGS: Most recent -->
         <div class="row blogListPadding">
             <div class="row mpClickable blogHover" *ngFor="let blog of blogs">
-                <a [routerLink]="['/blog', blog.url]">
+                <a [routerLink]="['/blogs', blog.url]">
                     <div class="col-md-6 col-md-push-4 blogListPadding">
                         <div class="row mpDesign27314F ">
                             <h2><b>{{blog.title}}</b></h2>

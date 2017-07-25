@@ -16,5 +16,6 @@ export const routes: string[] = [
   'blogs',
   'investment-calculators',
   'investment-return-calculator',
+  'rental-property-calculator',
   'lazy',
 ];
