@@ -10,12 +10,12 @@
 		        		  Each of the labels got a assigned a width percentage value. ones with longer names I gave more space -->
 		        	<!-- Loan-->
 		        	<label class="btn btn-default" style="width:25%;"  [ngClass]="{active:view === 'loan'}">
-                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="loan">
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="loan" (click)="scrollToTop()">
                         Loan
                     </label>
 		        	<!-- Cashflow -->
 		        	<label class="btn btn-default" style="width:42%;" [ngClass]="{active: view === 'cashflow'}">
-                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="cashflow">
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="cashflow" (click)="scrollToTop()">
                         Cash Flow
                     </label>
 		        	<!-- Result SUMMARY -->
@@ -48,17 +48,17 @@
 		        		  Each of the labels got a assigned a width percentage value. ones with longer names I gave more space -->
 		        	<!-- Loan-->
 		        	<label class="btn btn-default" style="width:25%;"  [ngClass]="{active:view === 'loan'}">
-                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="loan">
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="loan" (click)="scrollToTop()">
                         Loan
                     </label>
 		        	<!-- Cashflow -->
 		        	<label class="btn btn-default" style="width:42%;" [ngClass]="{active: view === 'cashflow'}">
-                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="cashflow">
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="cashflow" (click)="scrollToTop()">
                         Cash Flow
                     </label>
 		        	<!-- Result SUMMARY -->
 		        	<label class="btn btn-default" style="width:33%;" [ngClass]="{active: view === 'result'}" > 
-                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="result" >
+                        <input type="radio" class="mpButtonGroupRadio" [(ngModel)]="view" value="result"  (click)="calculate()">
                         Result
                     </label>
 		        </div>

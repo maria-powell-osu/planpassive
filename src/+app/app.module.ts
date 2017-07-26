@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { getDOM } from '@angular/platform-browser/src/dom/dom_adapter';
 
 import { HomeModule } from './+home/home.module';
 import { BlogModule } from './+blogs/blog.module';

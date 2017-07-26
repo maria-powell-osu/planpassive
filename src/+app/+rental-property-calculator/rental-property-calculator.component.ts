@@ -5,6 +5,8 @@ import { GoogleChartsService } from "../shared/charts/google-charts-service";
 import { LoaderComponent } from '../shared/loader/loader.component';
 import { NgModule }      from '@angular/core';
 import { CalculatorFormService } from './form/calculator-form.service';
+import { SeoService } from "../shared/seo.service";
+import { isBrowser } from 'angular2-universal';
 
 @Component({
     templateUrl: './rental-property-calculator.component.html',
@@ -19,13 +21,25 @@ export class RentalPropertyCalculatorComponent implements OnInit {
      constructor (private _rentalCalculatorService : RentalCalculatorService,
                   private fb: FormBuilder,
                   private _calculatorFormService : CalculatorFormService,
-                  private _googleChartsService : GoogleChartsService){}
+                  private _googleChartsService : GoogleChartsService,
+                  private _seoService: SeoService){
+        this._seoService.setTitle("Rental Property Calculator | Plan Passive");
+        this._seoService.setMetaDescription("Use the best fee rental property calculator online. See customized graphs and charts of your cash flow, total return, and cash on equity over time.");
+    }
 
      ngOnInit(): void {
+          if(isBrowser){
+            window.scrollTo(0, 0);
+        }
          this.view = 'loan';
          this.calcForm = this._calculatorFormService.calcForm;
          this._calculatorFormService.addEventListeners(this.calcForm);
      } 
+    scrollToTop(){
+        if(isBrowser){
+            window.scrollTo(0, 0);
+        }
+    }
       calculate() {
      
         //setting this to true, highlights missing fields now in form

@@ -15,4 +15,5 @@ import { CalculatorsModule } from '../+calculators/calculators.module';
     HomeComponent
   ]
 })
-export class HomeModule { }
+export class HomeModule { 
+}

@@ -1,12 +1,15 @@
-import { Component, ChangeDetectorRef} from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit} from '@angular/core';
 import { FormGroup , FormBuilder, FormControl, ValidatorFn, Validators, AbstractControl} from '@angular/forms';
 import { InvestmentCalculatorService } from './investment-return-calculator.service';
+import { SeoService } from "../shared/seo.service";
+import { isBrowser } from 'angular2-universal';
+
 
 @Component({
     templateUrl: './investment-return-calculator.component.html',
     providers: [InvestmentCalculatorService]
 })
-export class InvestmentReturnCalculatorComponent {
+export class InvestmentReturnCalculatorComponent implements OnInit {
     calcForm : FormGroup;
     userClickedCalculate : boolean = false;
     result : any;
@@ -16,9 +19,12 @@ export class InvestmentReturnCalculatorComponent {
 
     constructor(private _fb: FormBuilder,
                 private _investmentCalculatorService: InvestmentCalculatorService,
-                private _crd: ChangeDetectorRef ){
+                private _crd: ChangeDetectorRef ,
+                private _seoService: SeoService){
+        this._seoService.setTitle("Investment Return Calculator | Plan Passive");
+        this._seoService.setMetaDescription("Find out how much money will you have in your 401k? How long will it take you to become a millionaire? Cost you of waiting a few more years to invest?");
         this.result = {} as any;
-         this.calcForm = this._fb.group({  
+        this.calcForm = this._fb.group({  
             investAmount : ['', [Validators.required]],
             monthlyContributions : ['', [Validators.required]],
             annualRateOfReturn : ['', [Validators.required]],
@@ -28,8 +34,17 @@ export class InvestmentReturnCalculatorComponent {
             futureValueStackedBarChartData : ''
          });
     }
+    
+    ngOnInit(){
+        if(isBrowser){
+            window.scrollTo(0, 0);
+        }
+    }
 
     calculate(){
+        if(isBrowser){
+            window.scrollTo(0, 0);
+        }
         this.userClickedCalculate = true;
         if(this.calcForm.valid){
             this.result = this._investmentCalculatorService.calculateResults(this.calcForm);

@@ -1,4 +1,5 @@
 import { Component, Directive, ElementRef, Renderer, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { SeoService } from "./shared/seo.service";
 
 //
 /////////////////////////
@@ -25,5 +26,6 @@ export class XLargeDirective {
   templateUrl: "/app.component.html"
 })
 export class AppComponent {
-  title = 'ftw';
+  constructor (){
+  }
 }

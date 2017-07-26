@@ -1,18 +1,11 @@
--Once done, deploy online
+Left at:
+- the meta tags and the title should be updated server side
 
+Issues: 
+- may need to find another solution to include bootstrap, other than the assets folder
 
 http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs_express.html
 Change "eb create --sample node-express-env" to "eb create planpassive"
-
-Left at:
-- rental calculator charts is not working
-	- in results.component.ts try from ngOnInit to another life cycle hook
-
-Issues: 
-- routing does not work with blog/{name} directly
-- may need to find another solution to include bootstrap, other than the assets folder
-
-
 
 Start:
 npm run build
@@ -91,7 +84,7 @@ Sync with Master:
 
 
 Hours Tracking:
-	Coding: 394 hrs
+	Coding: 410 hrs
 
 Deploy
 Go to project main directory:

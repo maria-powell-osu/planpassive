@@ -12,6 +12,7 @@ import { GoogleChartsComponent } from "./charts/google-charts.component";
 import { mpDatePicker } from "./datepicker/mpdatepicker";
 import { mpToolTip } from "./tooltip/mptooltip";
 import { GoogleChartsService } from "./charts/google-charts-service"; 
+import { SeoService } from "./seo.service";
 
 
 const MODULES = [
@@ -40,7 +41,8 @@ const COMPONENTS = [
 const PROVIDERS = [
   ModelService,
   ApiService,
-  GoogleChartsService
+  GoogleChartsService,
+  SeoService
 ]
 
 @NgModule({
