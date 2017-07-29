@@ -513,4 +513,64 @@
           <br/>
         <!--</div>-->
   </div>
+      <!--Assumptions  -->
+      <div>
+  <div class="row elemIndent">
+      <div class="col-md-10 form-group">
+        <h3>Property Over Time</h3>
+        <fieldset>
+            <div class="row">
+                <div class="col-md-4">
+              <label>
+                  Property Value Appreciation
+                  <a rel="mpTooltip" mptooltip text="{{appreciationText}}"> 
+                    <span class="glyphicon glyphicon-question-sign glyphiconBlueColor" aria-hidden="true"></span>
+                  </a>
+              </label>
+              <div class="input-group">
+                  <input type="text" class="inpt form-control" formControlName="bp_assumedAppreciation" placeholder="%">
+                  <span class="input-group-addon">% / year</span>
+              </div>  
+
+              <label>
+              Vacancy Rate
+              <a rel="mpTooltip" mptooltip text="{{vacancyText}}"> 
+                <span class="glyphicon glyphicon-question-sign glyphiconBlueColor" aria-hidden="true"></span>
+              </a>
+            </label>
+            <div class="input-group">
+              <input type="number" step="0.001" class="inpt form-control" formControlName="o_vacancyRate" placeholder="%">
+              <span class="input-group-addon">%</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label>
+                    Annual Rent Increase
+                    <a rel="mpTooltip" mptooltip text="{{rentIncreaseText}}"> 
+                      <span class="glyphicon glyphicon-question-sign glyphiconBlueColor" aria-hidden="true"></span>
+                    </a>
+                  </label>
+                  <div class="input-group">
+                    <input type="number" step="0.001" class="inpt form-control" formControlName="ri_annualRentIncrease" placeholder="%">
+                    <span class="input-group-addon">%</span>
+                  </div>
+          </div>
+          <div class="col-md-4">
+            <label>
+                    Annual Expense Increase
+                    <a rel="mpTooltip" mptooltip text="{{expenseIncreaseText}}"> 
+                      <span class="glyphicon glyphicon-question-sign glyphiconBlueColor" aria-hidden="true"></span>
+                    </a>
+                  </label>
+                  <div class="input-group">
+                    <input type="number" step="0.001" class="inpt form-control" formControlName="e_annualExpenseIncrease" placeholder="%">
+                    <span class="input-group-addon">%</span>
+                  </div>
+          </div>
+        </div>
+      </fieldset>
+      </div>
+    </div>
+  </div>
+
 </div>
