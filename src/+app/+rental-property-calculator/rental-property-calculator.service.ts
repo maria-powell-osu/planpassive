@@ -1013,7 +1013,7 @@ export class RentalCalculatorService {
             dataArray.push(["Property Management", managementFee]);
         }
         if (formInput.o_propertyTaxes.value){
-            var propTaxes = formInput.o_propertyTaxes.value / 12;
+            var propTaxes = Math.round(formInput.o_propertyTaxes.value / 12);
             dataArray.push(["Property Taxes", propTaxes]);
         }
         if (formInput.o_vacancyRate.value){
