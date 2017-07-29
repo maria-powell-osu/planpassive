@@ -5,8 +5,6 @@ import { Router } from "@angular/router";
 
 import { HomeModule } from './+home/home.module';
 import { BlogModule } from './+blogs/blog.module';
-import { AboutModule } from './+about/about.module';
-import { TodoModule } from './+todo/todo.module';
 import { CalculatorsModule } from './+calculators/calculators.module';
 import { RentalPropertyCalculatorModule } from "./+rental-property-calculator/rental-property-calculator.module";
 import { InvestmentReturnCalculatorModule } from "./+investment-return-calculator/investment-return-calculator.module";
@@ -26,8 +24,6 @@ import { AppComponent, XLargeDirective } from './app.component';
   imports: [
     SharedModule,
     HomeModule,
-    AboutModule,
-    TodoModule,
     BlogModule,
     CalculatorsModule,
     InvestmentReturnCalculatorModule,

@@ -10,9 +10,7 @@
  * ];
  **/
 export const routes: string[] = [
-  'about',
   'home',
-  'todo',
   'blogs',
   'investment-calculators',
   'investment-return-calculator',
