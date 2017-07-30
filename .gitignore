@@ -37,5 +37,4 @@ webpack.records.json
 
 # Server Config #
 /src/credentials
-/src/credentials.backup
 
