@@ -13,6 +13,7 @@ import { mpDatePicker } from "./datepicker/mpdatepicker";
 import { mpToolTip } from "./tooltip/mptooltip";
 import { GoogleChartsService } from "./charts/google-charts-service"; 
 import { SeoService } from "./seo.service";
+//import { EmailService } from "./email.service";
 
 
 const MODULES = [
@@ -43,6 +44,7 @@ const PROVIDERS = [
   ApiService,
   GoogleChartsService,
   SeoService
+  //EmailService
 ]
 
 @NgModule({

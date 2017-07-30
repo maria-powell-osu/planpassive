@@ -9,6 +9,14 @@ TODO:
 - semrush analysis
 	- bing submission, google look at the robots ?
 - robots route?
+- 404 not found page
+- convert routes to AWS by individual routes
+	- I don't think we ever need to move the GAE datastore routes
+		- for now create internal routes that then query datastore?
+- move conversion branch to master
+- see where the milestones are for planpassive for Tracking
+- implement jasons about Page idea
+- contact us page
 
 SES tutorial
 - unsubscribe field
@@ -29,5 +37,13 @@ eb deploy
 
 Hours Tracking:
 	Coding: 416 hrs
+
+Code Branches:
+planpassive: current AWS 
+reic: gae Branch
+planpassive-aws: deprecate old test branch
+
+PlanPassive Milestones
+- 7/29/2017 new website running on AWS for improved SEO in Angular 2
 
  

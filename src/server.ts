@@ -62,12 +62,12 @@ app.use(cacheControl, express.static(path.join(ROOT, 'dist/client'), {index: fal
 
 //
 /////////////////////////
-// ** Example API
+// ** REST API
 // Notice API should be in aseparate process
-import { serverApi, createTodoApi } from './backend/api';
+import { createNewCommentEmailNotification } from './backend/api';
 // Our API for demos only
-app.get('/data.json', serverApi);
-app.use('/api', createTodoApi());
+// app.get('/data.json', serverApi);
+app.use('/api', createNewCommentEmailNotification());
 
 process.on('uncaughtException', function (err) { 
   console.error('Catching uncaught errors to avoid process crash', err);

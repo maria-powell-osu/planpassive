@@ -72,7 +72,7 @@ export class CommentReplyComponent {
                 }
 
                 //create a new comment 
-                this._commentService.postComment(JSON.stringify(this.commentReplyForm.getRawValue()))
+                this._commentService.postComment(JSON.stringify(this.commentReplyForm.getRawValue()), this.blog)
                  .subscribe((response:any)=>{this.commentSubmitted(response);},
                 error => this.errorMessage = <any>error);
             }

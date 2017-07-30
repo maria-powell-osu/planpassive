@@ -1,5 +1,6 @@
 import { Component, Directive, ElementRef, Renderer, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { SeoService } from "./shared/seo.service";
+import { EmailService } from "./shared/email.service";
 
 //
 /////////////////////////
@@ -23,6 +24,7 @@ export class XLargeDirective {
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.Emulated,
   selector: 'app',
+  providers: [EmailService],
   templateUrl: "/app.component.html"
 })
 export class AppComponent {
