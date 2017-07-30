@@ -10,6 +10,9 @@ import { RentalCalculatorService } from '../../rental-property-calculator.servic
 export class ResultsComponent {
      @Input() calcForm: FormGroup;
      @Input() resultData: any;
+     @Input() cashFlowView : string;
+     @Input() totalReturnView : string;
+     @Input() cashOnEquityView : string;
      cashFlowTableLoading: boolean;
      cashFlowChartLoading: boolean;
      totalReturnChartLoading: boolean;
@@ -17,9 +20,6 @@ export class ResultsComponent {
      cashOnEquityChartLoading: boolean;
      cashOnEquityTableLoading: boolean;
      pieChartLoading : boolean;
-     cashFlowView : string;
-     totalReturnView : string;
-     cashOnEquityView : string;
      incomePieChartsLabels: any;
 
 

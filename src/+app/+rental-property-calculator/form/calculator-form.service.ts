@@ -65,22 +65,22 @@ export class CalculatorFormService {
         return new FormBuilder().group({ 
                 add_bl_loanName : '',
                 add_bl_loanAmount : ['', [Validators.required]],
-                add_bl_interest : [false, [Validators.required]],
+                add_bl_interest : ['', [Validators.required]],
                 add_bl_amortization : ['', [Validators.required]],
                 add_bl_balloon : '',
                 add_bl_upFrontLenderPoints : '',
-                add_bl_interestOnly : ''
+                add_bl_interestOnly : false
             });
     }
     private specialTermsLoanForm() : FormGroup {
         return new FormBuilder().group({
             stl_loanName : '',
             stl_amount : ['', [Validators.required]],
-            stl_interest : [false, [Validators.required]],
+            stl_interest : ['', [Validators.required]],
             stl_amortization : ['', [Validators.required]],
             stl_balloon : '',
             stl_upFrontLenderPoints : '',
-            stl_interestOption : ''
+            stl_interestOption : false
          });
     }
     private unitForm() : FormGroup {

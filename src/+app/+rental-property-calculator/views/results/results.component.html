@@ -4,7 +4,7 @@
         <h4>Not All Fields Have Been Entered</h4>
         <b>Enter all fields marked in red</b>
     </div>
-    <div *ngIf="calcForm.valid">
+    <div 	[ngClass]="{hideElementByIndex: !calcForm.valid}">
         <!--loader bar that kicks in while calculations are running-->
         <loader [loading]="cashFlowTableLoading && cashFlowChartLoading 
                          && totalReturnChartLoading && totalReturnTableLoading

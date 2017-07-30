@@ -471,7 +471,7 @@ export class RentalCalculatorService {
             }
         } else if (view == "specialTermsLoan"){
             for (var i = 0; i < specialTermsLoansLength; i++) {
-                if (specialTermsLoans[i].stl_interestOption == "yes"){
+                if (specialTermsLoans[i].stl_interestOption == true){
 
                     //Current year's loan payment
                     curStlPaymentAmount = specialTermsLoans[i].stl_amount * (specialTermsLoans[i].stl_interest / 100);
@@ -503,7 +503,7 @@ export class RentalCalculatorService {
                         }
                     } 
 
-                } else if (specialTermsLoans[i].stl_interestOption == "no"){
+                } else if (specialTermsLoans[i].stl_interestOption == false){
                     //calculate current year's amortization
                     p = specialTermsLoans[i].stl_amount;
                     r = (specialTermsLoans[i].stl_interest /100)/ 12;
@@ -638,13 +638,13 @@ export class RentalCalculatorService {
             }
         }else if (view === "specialTermsLoan"){
             for(var i = 0; i < specialTermsLoansLength; i++){
-                if (specialTermsLoans[i].stl_interestOption === "yes"){
+                if (specialTermsLoans[i].stl_interestOption == true){
                     if (specialTermsLoans[i].stl_balloon){
                         //Adds the Ballon Payment to the given ballon year
                         var ballonYear = specialTermsLoans[i].stl_balloon - 1;
                         balloonPmt = specialTermsLoans[i].stl_amount;
                     }
-                }else if (specialTermsLoans[i].stl_interestOption === "no"){
+                }else if (specialTermsLoans[i].stl_interestOption == false){
                     if (specialTermsLoans[i].stl_balloon){
 
                         //calculate current year's amortization
@@ -1136,7 +1136,7 @@ export class RentalCalculatorService {
                         if (specialTermsLoans[j].stl_balloon && i > specialTermsLoans[j].stl_balloon - 1) {
                             remLoan[i] += 0;
                         } else {
-                            if (specialTermsLoans[j].stl_interestOption == "no"){
+                            if (specialTermsLoans[j].stl_interestOption == false){
                                 //Calculate remaining loan 
                                 p = specialTermsLoans[j].stl_amount;
                                 r = (specialTermsLoans[j].stl_interest / 100) / 12;

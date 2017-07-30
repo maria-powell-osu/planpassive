@@ -41,7 +41,7 @@ export class RentalPropertyCalculatorComponent implements OnInit {
         }
     }
       calculate() {
-     
+        this.scrollToTop();
         //setting this to true, highlights missing fields now in form
         this.calcForm.patchValue({'userClickedResults': true});
 

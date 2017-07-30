@@ -34,8 +34,12 @@
 		<cashflow [hidden]="view != 'cashflow'" [calcForm]="calcForm"></cashflow>
 		<!--I am using the hideElement class instead of the hidden property because the hidden property uses
 		  display:none which messes up the google table sizing  -->
-		<result [calcForm]="calcForm" [resultData]="resultData"
-			[ngClass]="{hideElementByIndex: view !== 'result'}"></result> 
+		<result [calcForm]="calcForm" [resultData]="resultData" [cashFlowView]="'graph'" 
+			[ngClass]="{hideElementByIndex: view !== 'result'}" [totalReturnView]="'graph'"
+			[cashOnEquityView]="'graph'"></result> 
+			<!--view attributes added to the graph view reset 
+				as the user goes back and forth between the tabs 
+			since google charts gets messaed up when hidden  -->
 	</form>
 	<br/>
 	<br/>
