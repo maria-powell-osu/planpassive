@@ -1,6 +1,7 @@
 Left at:
-- setting up a rest route for jason notification when comments were added
-
+- need to fix the graph that when the table has been clicked then tab switch then back should fefault to graph again
+- why is the button tab randomly unresponsive for the calculator?
+	- it happns when the graph tab has not been push yet so something on how it is activated
 TODO:
 - notification for Jason to see when comments were added
 - notification for Users to see when someone replied to the comments
