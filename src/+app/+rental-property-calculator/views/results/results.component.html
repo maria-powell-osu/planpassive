@@ -77,13 +77,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="btn-toolbar">
-                    <div class="btn-group">
-                        <label class="btn btn-default" [ngClass]="{active: cashFlowView === 'graph'}">
+                    <div class="btn-group" style="width:100%;">
+                        <label class="btn btn-default" style="width:15%;" [ngClass]="{active: cashFlowView === 'graph'}">
                             <input type="radio" [(ngModel)]="cashFlowView" value="graph" 
                             class="mpButtonGroupRadio">
                             Graph
                         </label>
-                        <label class="btn btn-default" [ngClass]="{active: cashFlowView === 'table'}">
+                        <label class="btn btn-default" style="width:15%;" [ngClass]="{active: cashFlowView === 'table'}">
                             <input type="radio" [(ngModel)]="cashFlowView" value="table" class="mpButtonGroupRadio">
                             Table
                         </label>
@@ -143,12 +143,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="btn-toolbar">
-                    <div class="btn-group">
-                        <label class="btn btn-default" [ngClass]="{active: totalReturnView === 'graph'}">
+                    <div class="btn-group" style="width:100%;">
+                        <label style="width:15%;" class="btn btn-default" [ngClass]="{active: totalReturnView === 'graph'}">
                             <input type="radio" [(ngModel)]="totalReturnView" value="graph" class="mpButtonGroupRadio">
                             Graph
                         </label>
-                        <label class="btn btn-default" [ngClass]="{active: totalReturnView === 'table'}">
+                        <label style="width:15%;" class="btn btn-default" [ngClass]="{active: totalReturnView === 'table'}">
                             <input type="radio" [(ngModel)]="totalReturnView" value="table" class="mpButtonGroupRadio">
                             Table
                         </label>
@@ -156,6 +156,8 @@
                 </div>
             </div>
         </div>
+          <br/>
+
 
         <!--TOTAL RETURN CHARTS-->
          <div class="row" [hidden]="totalReturnView !== 'graph'">
@@ -183,12 +185,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="btn-toolbar">
-                    <div class="btn-group">
-                        <label class="btn btn-default" [ngClass]="{active: cashOnEquityView === 'graph'}">
+                    <div class="btn-group" style="width:100%;">
+                        <label style="width:15%;" class="btn btn-default" [ngClass]="{active: cashOnEquityView === 'graph'}">
                             <input type="radio" [(ngModel)]="cashOnEquityView" value="graph" class="mpButtonGroupRadio">
                             Graph
                         </label>
-                        <label class="btn btn-default" [ngClass]="{active: cashOnEquityView === 'table'}">
+                        <label style="width:15%;" class="btn btn-default" [ngClass]="{active: cashOnEquityView === 'table'}">
                             <input type="radio" [(ngModel)]="cashOnEquityView" value="table" class="mpButtonGroupRadio">
                             Table
                         </label>
@@ -196,6 +198,8 @@
                 </div>
             </div>
         </div>
+          <br/>
+
 
         <!--CASH ON EQUITY CHARTS-->
          <div class="row" [hidden]="cashOnEquityView !== 'graph'">
