@@ -41,7 +41,14 @@ export class InvestmentReturnCalculatorComponent implements OnInit {
         }
     }
 
+    updateView(){
+        this.chartView = 'barGraph';
+       //we want to update the chartview before the chart gets drawn
+       this._crd.detectChanges();
+    }
+
     calculate(){
+        this.updateView();
         if(isBrowser){
             window.scrollTo(0, 0);
         }

@@ -129,7 +129,7 @@
                     <div class="row">
                         <div class="col-md-12">
                                 <!--Stacked Column Chart-->
-                            <div class="row" [ngClass]="{hideElementByIndex:chartView !== 'barGraph'}">
+                            <div class="row" [hidden]="chartView !== 'barGraph'">
                                 <div class="col-md-12">
                                     <!--BAR GRAPH-->
                                      <googlecharts [chartType]="'columnChart'" [(loading)]="futureValueStackColumnChartLoading"
@@ -137,7 +137,7 @@
                                                 [chartId]="'futureValueStackedBarChartData'"></googlecharts> 
                                 </div>
                             </div>
-                            <div class="row" [ngClass]="{hideElementByIndex:chartView !== 'pieChart'}">
+                            <div class="row" [hidden]="chartView !== 'pieChart'">
                                 <div class="col-md-6">
                                     <h4>Monthly Income</h4>
                                      <googlecharts [chartType]="'pieChart'" [(loading)]="futureValuePieChartLoading"
