@@ -1,5 +1,50 @@
--Once done, deploy online
+Left at:
+- need to fix the graph that when the table has been clicked then tab switch then back should fefault to graph again
+- why is the button tab randomly unresponsive for the calculator?
+	- it happns when the graph tab has not been push yet so something on how it is activated
+TODO:
+- notification for Jason to see when comments were added
+- notification for Users to see when someone replied to the comments
+- newsletter to all subscribed Users
+- google analytics
+- semrush analysis
+	- bing submission, google look at the robots ?
+- robots route?
+- 404 not found page
+- convert routes to AWS by individual routes
+	- I don't think we ever need to move the GAE datastore routes
+		- for now create internal routes that then query datastore?
+- move conversion branch to master
+- see where the milestones are for planpassive for Tracking
+- implement jasons about Page idea
+- contact us page
 
+SES tutorial
+- unsubscribe field
+- saving emails to the list
+- Jason to create newsletter process
+- pricing
+- how to send email notification 
+
+Issues: 
+- rental property calculator: show list of errors
 
 http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_nodejs_express.html
 Change "eb create --sample node-express-env" to "eb create planpassive"
+
+Compilation:
+npm run start OR npm run buil && npm run server
+eb deploy
+
+Hours Tracking:
+	Coding: 416 hrs
+
+Code Branches:
+planpassive: current AWS 
+reic: gae Branch
+planpassive-aws: deprecate old test branch
+
+PlanPassive Milestones
+- 7/29/2017 new website running on AWS for improved SEO in Angular 2
+
+ 

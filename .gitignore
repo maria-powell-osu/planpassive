@@ -10,6 +10,7 @@ morgan.log
 /tsd_typings/
 /dist/
 /compiled/
+/src/assets/bootstrap/
 
 # Node #
 npm-debug.log
@@ -33,4 +34,7 @@ webpack.records.json
 !.elasticbeanstalk/*.cfg.yml
 
 !.elasticbeanstalk/*.global.yml
+
+# Server Config #
+/src/credentials
 

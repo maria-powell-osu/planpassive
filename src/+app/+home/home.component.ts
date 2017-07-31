@@ -1,27 +1,33 @@
-import { Component, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-
-import { ModelService } from '../shared/model/model.service';
+import { Component, ChangeDetectionStrategy, ViewEncapsulation, OnInit } from '@angular/core';
+import { BlogService} from '../+blogs/blog.service';
+import { IBlog } from "../+blogs/blog.schema";
+import { CalculatorsComponent} from "../+calculators/calculators.component";
+import { SeoService } from "../shared/seo.service";
+import { isBrowser } from 'angular2-universal';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
   encapsulation: ViewEncapsulation.Emulated,
   selector: 'home',
-  styleUrls: [ './home.component.css' ],
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
+  providers: [BlogService] //dependency injection
 })
 export class HomeComponent {
-  data: any = {};
-  constructor(public model: ModelService) {
+  blogs : IBlog[];
+  errorMessage : string;
 
-    // we need the data synchronously for the client to set the server response
-    // we create another method so we have more control for testing
-    this.universalInit();
-  }
-
-  universalInit() {
-    this.model.get('/data.json').subscribe(data => {
-      this.data = data;
-    });
-  }
-
+    constructor(private _blogService : BlogService, private _seoService: SeoService){
+      this._seoService.setTitle("Plan Passive – Passive Income for a Free Life");
+      this._seoService.setMetaDescription("Plan your ideal lifestyle by creating passive income streams. Make your money work hard so you don’t have to. Home of the best Rental Property Calculator.");
+    }
+    ngOnInit(): void {
+       if(isBrowser){
+            window.scrollTo(0, 0);
+        }
+        //Retrieve all Blogs
+        this._blogService.getBlogs()
+        .subscribe(blogs => this.blogs = blogs,
+        error => this.errorMessage = <any>error);
+    }
 }
+
