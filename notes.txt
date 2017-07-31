@@ -1,9 +1,8 @@
 Left at:
-- need to fix the graph that when the table has been clicked then tab switch then back should fefault to graph again
-- why is the button tab randomly unresponsive for the calculator?
-	- it happns when the graph tab has not been push yet so something on how it is activated
+- google analytics
+- add the ability to send newsletter to users
+
 TODO:
-- notification for Jason to see when comments were added
 - notification for Users to see when someone replied to the comments
 - newsletter to all subscribed Users
 - google analytics
