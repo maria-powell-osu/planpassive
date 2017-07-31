@@ -94,7 +94,7 @@
         <br/>
 
         <!--CASHFLOW GRAPHS-->
-        <div class="row" [hidden]="cashFlowView !== 'graph'">
+        <div class="row" [ngClass]="{hideElementByIndex:cashFlowView !== 'graph'}">
             <div class="col-md-12">
                 <!--Cashflow Combo Chart-->
                 <googlecharts [chartType]="'comboChart'" [(loading)]="cashFlowChartLoading"
@@ -103,7 +103,7 @@
                         ></googlecharts>
             </div>
         </div>
-        <div class="row" [hidden]="cashFlowView !== 'table'">
+        <div class="row" [ngClass]="{hideElementByIndex:cashFlowView !== 'table'}">
             <div class="col-md-12">
                 <!--Cashflow Table-->
                 <googlecharts [chartType]="'dataTable'" [(loading)]="cashFlowTableLoading"
@@ -160,7 +160,7 @@
 
 
         <!--TOTAL RETURN CHARTS-->
-         <div class="row" [hidden]="totalReturnView !== 'graph'">
+         <div class="row" [ngClass]="{hideElementByIndex:totalReturnView !== 'graph'}">
             <div class="col-md-12">
                 <!--Cashflow Combo Chart-->
                 <googlecharts [chartType]="'comboChart'" [(loading)]="totalReturnChartLoading"
@@ -168,7 +168,7 @@
                             [chartId]="'totalReturnStackedBarChart'"></googlecharts>
             </div>
         </div>
-        <div class="row" [hidden]="totalReturnView !== 'table'">
+        <div class="row" [ngClass]="{hideElementByIndex:totalReturnView !== 'table'}">
             <div class="col-md-12">
                 <!--Cashflow Table-->
                 <googlecharts [chartType]="'dataTable'" [(loading)]="totalReturnTableLoading"
@@ -202,7 +202,7 @@
 
 
         <!--CASH ON EQUITY CHARTS-->
-         <div class="row" [hidden]="cashOnEquityView !== 'graph'">
+         <div class="row" [ngClass]="{hideElementByIndex:cashOnEquityView !== 'graph'}">
             <div class="col-md-12">
                 <!--Cashflow Combo Chart-->
                 <googlecharts [chartType]="'comboChart'" [(loading)]="cashOnEquityChartLoading"
@@ -210,7 +210,7 @@
                             [chartId]="'cashOnEquityChart'"></googlecharts>
             </div>
         </div>
-        <div class="row" [hidden]="cashOnEquityView !== 'table'">
+        <div class="row" [ngClass]="{hideElementByIndex:cashOnEquityView !== 'table'}">
             <div class="col-md-12">
                 <!--Cashflow Table-->
                 <googlecharts [chartType]="'dataTable'" [(loading)]="cashOnEquityTableLoading"
