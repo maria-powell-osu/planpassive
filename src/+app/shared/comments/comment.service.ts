@@ -17,7 +17,7 @@ export class CommentService {
         this.postData = JSON.parse(postData);
         this.postData.blog = blog;
         //let options = new RequestOptions({ headers: new Headers({ 'Content-Type': 'application/json' }) });
-        return this._http.post("http://planpassive.com/comments", postData)
+        return this._http.post("http://realestatecalculator-1256.appspot.com/comments", postData)
         .map(this.extractData.bind(this))
         .catch(this.handleError);
     }

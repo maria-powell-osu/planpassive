@@ -12,12 +12,12 @@ export class BlogService {
 
 //TODO: this list needs to get ordered
     getBlogs() : Observable<IBlog[]> {
-        return this._http.get("http://planpassive.com/blogData")
+        return this._http.get("http://realestatecalculator-1256.appspot.com/blogData")
         .map(this.extractData)
         .catch(this.handleError);
     }
     getBlog(name : string) : Observable<IBlog> {
-        return this._http.get("http://planpassive.com/blogData/" + name)
+        return this._http.get("http://realestatecalculator-1256.appspot.com/blogData/" + name)
         //.map((response: Response) => <IBlog> response.json())
         .map(this.extractData)
         .catch(this.handleError);
