@@ -1,8 +1,9 @@
 Left at:
-- google analytics
-- add the ability to send newsletter to users
+- alt tags for images where added to the db, now add to the UI 
+- we need alt tags for all images on the blog not just the title
 
 TODO:
+- secur the rest API for leaving comments route
 - notification for Users to see when someone replied to the comments
 - newsletter to all subscribed Users
 - google analytics

@@ -5,6 +5,7 @@ export interface IBlog {
     date: string;
     metaTag: string;
     titleTag: string;
+    altTag: string;
     content: string;
     id: number;
     comments: any;
