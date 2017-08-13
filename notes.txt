@@ -1,6 +1,5 @@
 Left at:
-- alt tags for images where added to the db, now add to the UI 
-- we need alt tags for all images on the blog not just the title
+- alt tags for staic images such as cover image
 
 TODO:
 - secur the rest API for leaving comments route
@@ -19,7 +18,7 @@ TODO:
 - implement jasons about Page idea
 - contact us page
 
-SES tutorial
+SES tutorial 
 - unsubscribe field
 - saving emails to the list
 - Jason to create newsletter process
