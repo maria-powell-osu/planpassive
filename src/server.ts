@@ -94,6 +94,36 @@ function ngApp(req, res) {
   });
 
 }
+function generate_xml_sitemap() {
+    // this is the source of the URLs on your site, in this case we use a simple array, actually it could come from the database
+    //var urls = ['about.html', 'javascript.html', 'css.html', 'html5.html'];
+    var urls = ['home', 'blogs', 
+    'blogs/the-top-10-passive-income-investments',
+    'blogs/use-a-routine-maintenance-checklist-to-make-your-rental-property-more-passive',
+    'blogs/have-some-self-respect:-place-a-dollar-value-on-your-time',
+    'blogs/the-3-essential-ingredients-of-a-great-investment',
+    'blogs/pay-off-debt-or-invest:-6-questions-you-should-consider',
+    'blogs/ideal-passive-income-composition-by-life-stage',
+    'blogs/best-kept-secret-of-the-wealthy:-use-leverage-or-fall-behind',
+    'investment-calculators',
+    'rental-property-calculator',
+    'investment-return-calculator']
+    // the root of your website - the protocol and the domain name with a trailing slash
+    var root_path = 'http://www.planpassive.com/';
+    // XML sitemap generation starts here
+    var priority = 0.5;
+    var freq = 'monthly';
+    var xml = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
+    urls.forEach(route => {
+        xml += '<url>';
+        xml += '<loc>'+ root_path + route + '</loc>';
+        xml += '<changefreq>'+ freq +'</changefreq>';
+        xml += '<priority>'+ priority +'</priority>';
+        xml += '</url>';
+    });
+    xml += '</urlset>';
+    return xml;
+}
 
 /**
  * use universal for specific routes
@@ -102,6 +132,26 @@ app.get('/', ngApp);
 routes.forEach(route => {
   app.get(`/${route}`, ngApp);
   app.get(`/${route}/*`, ngApp);
+});
+
+/*
+ * Sitemap used for search engines
+ */
+app.get('/sitemap.xml', function(req, res) {
+    var sitemap = generate_xml_sitemap(); // get the dynamically generated XML sitemap
+    res.header('Content-Type', 'text/xml');
+    res.send(sitemap);     
+});
+
+/*
+ * Robots.txt for SEO
+ * most engine look at the robots text to 
+ * see where the sitemap is located
+ */ 
+app.get('/robots.txt', function(req, res) {
+    var sitemap = generate_xml_sitemap(); // get the dynamically generated XML sitemap
+    res.header('Content-Type', 'text/plain');
+    res.send("Sitemap: http://planpassive.com/sitemap");     
 });
 
 app.get('*', function(req, res) {
