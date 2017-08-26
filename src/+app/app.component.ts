@@ -1,7 +1,10 @@
 import { Component, Directive, ElementRef, Renderer, ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { SeoService } from "./shared/seo.service";
 import { EmailService } from "./shared/email.service";
+import {Router, NavigationEnd} from "@angular/router";
+import { isBrowser } from 'angular2-universal';
 
+declare var ga: any;
 //
 /////////////////////////
 // ** Example Directive
@@ -28,6 +31,12 @@ export class XLargeDirective {
   templateUrl: "/app.component.html"
 })
 export class AppComponent {
-  constructor (){
+  constructor (public router: Router){
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        ga('set', 'page', event.urlAfterRedirects);
+        ga('send', 'pageview');
+      }
+    });
   }
 }
